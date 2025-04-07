@@ -1,0 +1,511 @@
+body {
+    background-color: black;
+}
+
+/* HEADER */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+header h3 {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    margin: 50px;
+}
+
+/* HISTORY */
+.history, .contact{
+    display: flex;
+    margin: 50px;
+}
+.history img {
+    width: 300px;
+}
+.history p {
+    margin-right: 20px;
+}
+.history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2 {
+    font-size: 64px;
+    font-weight: 500;
+    text-align: center;
+}
+.history h2, .contact h2 {
+    text-align: left;
+}
+
+/* EVENTS */
+.events, .chart, .activities, .services, .about {
+    margin: 50px;
+}
+.events .card {
+    padding: 0 20px;
+}
+.events p, .activities p, .services li, .about p, .history p{
+    text-align: justify;
+}
+
+.cards {
+    display: flex;
+    text-align: center;
+}
+.card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+.card h4 {
+    font-size: 21px;
+}
+
+/* ACTIVITIES */
+.activities img {
+    width: 450px;
+    margin-right: 20px;
+}
+.activities .act {
+    display: flex;
+    margin-bottom: 50px;
+}
+.activities #act2 p {
+    margin-right: 20px;
+}
+.activities #act2 img {
+    margin-right: 0px;
+}
+
+/* ORG CHART */
+.chart .people {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.chart .person {
+    display: flex;
+    margin: 20px;
+}
+.chart img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.chart .text {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.chart .fullname h3 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services ul h4, .services ol h4 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 23px;
+}
+.services .ul {
+    display: flex;
+    gap: 300px;
+}
+
+/* ABOUT US */
+.about img {
+    width: 450px;
+    margin-right: 20px;
+}
+.about .abt {
+    display: flex;
+    margin-bottom: 50px;
+}
+.about .abt p {
+    margin-right: 20px;
+}
+.vis-mis h3 {
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);;
+}
+.vis-mis p {
+    text-align: justify;
+}
+.vision {
+    margin-bottom: 50px;
+}
+
+/* CONTACT US */
+.contact .text {
+    width: 50%;
+}
+.contact .socmed img {
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 10px;
+}
+.contact .info img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.contact ul li {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* FORM */
+form input, form textarea, form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: white;
+}
+form textarea {
+    height: 250px;
+}
+form button {
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #289906;
+}
+.spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    animation: spin 0.6s linear infinite;
+    margin-right: 5px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* RESPONSIVE MOBILE PHONE*/
+@media (max-width: 600px) {
+    header {
+        height: 50vh;
+    }
+
+    .history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2 {
+        font-size: clamp(2rem, 2.5vw, 4rem);
+        font-weight: 500;
+        text-align: center;
+    }
+
+    /* HISTORY */
+    .history, .contact{
+        flex-direction: column;
+        margin: 10px 20px;
+        align-items: center;
+    }
+    .history .text {
+        margin-bottom: 20px;
+    }.history p {
+        margin-right: 0;
+    }
+
+    /* EVENTS */
+    .events .cards {
+        flex-direction: column;
+    }
+    .events .card {
+        margin-bottom: 15px;
+    }
+    .events, .chart, .activities, .services, .about {
+        margin: 10px 20px;
+    }
+
+    /* ACTIVITIES */
+    .activities img {
+        display: none;
+    }
+    .activities #act1 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .activities #act2 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .activities #act3 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .activities .act {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    /* ORG CHART */
+    .chart .people {
+        justify-content:space-evenly;
+    }
+    .chart img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .chart .text {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .chart .fullname h3 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .chart .position p {
+        font-size: 14px;
+    }
+
+    /* SERVICES */
+    .services .ul {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    /* ABOUT US */
+    .about img {
+        display: none;
+    }
+    .about .abt p {
+        margin-right: 0;
+    }
+    .about {
+        margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    .contact .text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .contact .text h2 {
+        margin-bottom: 10px;
+    }
+    .contact .socmed {
+        text-align: center;
+    }
+    .contact form {
+        width:100%;
+    }
+
+}
+
+/* TABLET RESPONSIVE STYLES (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* HEADER */
+    header {
+        height: 70vh;
+    }
+    
+    header h3 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        margin: 30px;
+    }
+
+    /* HISTORY */
+    .history {
+        flex-direction: column;
+        margin: 30px;
+    }
+    
+    .history .img {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .history img {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    /* EVENTS */
+    .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .card {
+        width: calc(50% - 30px);
+        margin: 0;
+        height: 250px;
+    }
+    
+    .card:last-child {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* ACTIVITIES */
+    .activities .act {
+        flex-direction: column;
+    }
+    
+    .activities img {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+    
+    .activities #act2 p {
+        margin-right: 0;
+    }
+
+    /* ORG CHART */
+    .chart .people {
+        justify-content: space-around;
+    }
+    
+    .chart .person {
+        width: 45%;
+        margin: 10px 0;
+    }
+    
+    .chart img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .chart .fullname h3 {
+        font-size: 1.2rem;
+    }
+
+    /* SERVICES */
+    .services .ul {
+        gap: 100px;
+    }
+
+    /* ABOUT US */
+    .about .abt {
+        flex-direction: column;
+    }
+    
+    .about img {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto 0;
+        display: block;
+    }
+
+    /* CONTACT US */
+    .contact {
+        flex-direction: column;
+    }
+    
+    .contact .text,
+    .contact form {
+        width: 100%;
+    }
+    
+    .contact form {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
+
+/* LARGE TABLET (768px - 1024px) - iPad landscape */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* HISTORY */
+    .history {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .history .text {
+        width: 60%;
+    }
+    
+    .history .img {
+        width: 40%;
+        margin-top: 0;
+    }
+    
+    .history img {
+        width: 100%;
+    }
+
+    /* EVENTS */
+    .card {
+        height: 300px;
+    }
+
+    /* ACTIVITIES */
+    .activities p{
+        margin-left: 10px;
+    }
+    .activities .act {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .activities img {
+        width: 40%;
+    }
+    
+    .activities #act2 {
+        flex-direction: row-reverse;
+    }
+
+    /* ORG CHART */
+    .chart .person {
+        width: 40%;
+    }
+    .chart .fullname {
+        font-size: 16px;
+    }
+
+    /* SERVICES */
+    .services .ul {
+        gap: 150px;
+    }
+
+    /* ABOUT US */
+    .about .abt {
+        flex-direction: row;
+    }
+    
+    .about img {
+        width: 40%;
+        margin: 0 0 0 20px;
+    }
+}

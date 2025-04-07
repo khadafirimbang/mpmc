@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+nav {
+    background-color: #289906;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+nav img {
+    width: 30px;
+    margin-left: 20px;
+}
+nav .title h3 {
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);;
+}
+nav .burger {
+    cursor: pointer;
+}
+
+/* App Drawer */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #289906;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+}
+.drawer.open {
+    left: 0; /* Show the drawer */
+}
+.drawer ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+.drawer ul li {
+    margin: 15px 0;
+}
+
+.drawer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+}
+.drawer h3 {
+    color: black;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+.overlay.active {
+    display: block;
+}
