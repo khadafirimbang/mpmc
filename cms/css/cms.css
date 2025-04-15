@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: column;
+}
+header a {
+    text-decoration: none;
+    background-color: #289906;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    padding: 10px 50px;
+    border-radius: 10px;
+}
+
+/* ACADEMIC OFFERINGS */
+.card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/mpmc/img/card.jpg');
+    width: 500px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 300px;
+    }
+}
+
+/* SCHOOL FACILITIES */
+.services ul li {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+}
