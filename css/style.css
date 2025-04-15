@@ -44,9 +44,6 @@ header h3 {
 .events, .chart, .activities, .services, .about {
     margin: 50px;
 }
-.events .card {
-    padding: 0 20px;
-}
 .events p, .activities p, .services li, .about p, .history p{
     text-align: justify;
 }
@@ -54,30 +51,45 @@ header h3 {
 .cards {
     display: flex;
     text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .card {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
     background-position: center;
     background-repeat: no-repeat;
     height: 300px;
-    margin: 0px 5px 0px 5px;
+    width: 400px;
+    margin: 0px 8px 20px 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
+    padding: 0 20px;
 }
 .card h4 {
     font-size: 21px;
+}
+.card p {
+    text-align: center;
 }
 
 /* ACTIVITIES */
 .activities img {
     width: 450px;
     margin-right: 20px;
+    border-radius: 10px;
 }
 .activities .act {
     display: flex;
     margin-bottom: 50px;
+
+}
+.activities .act .txt {
+    display: block;
+}
+.activities .act .txt h3 {
+    font-size: clamp(1rem, 2.5vw, 2.0rem);
 }
 .activities #act2 p {
     margin-right: 20px;
@@ -239,9 +251,13 @@ form button {
     /* EVENTS */
     .events .cards {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .events .card {
         margin-bottom: 15px;
+        width: 320px;
+        margin-left: 0px;
     }
     .events, .chart, .activities, .services, .about {
         margin: 10px 20px;
