@@ -221,7 +221,6 @@
         </div>
     </div>
 
-
     <div class="contact" id="contact">
         <div class="text">
             <h2>Contact Us</h2>
@@ -249,6 +248,26 @@
             <p id="responseMessage" style="display: none; text-align: center; margin-top: 10px;"></p>
         </form>
     </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3>MPMC Assistant</h3>
+            <button class="close-chatbot" onclick="toggleChatbot()">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chatbot-questions-wrapper">
+            <div class="chatbot-questions" id="chatbotQuestions">
+                <!-- Predefined questions will appear here -->
+            </div>
+        </div>
+    </div>
+    <button class="chatbot-toggle" onclick="toggleChatbot()">
+        <img src="./img/message.png" alt="Chat">
+    </button>    
+    
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -312,6 +331,123 @@
             drawer.classList.toggle("open");
             overlay.classList.toggle("active");
         }
+
+
+        // Chatbot functionality
+        const chatbotQuestions = [
+            "What is MPMC?",
+            "How can I become a member?",
+            "What services do you offer?",
+            "What are the benefits of membership?",
+            "Where is your office located?",
+            "Test Question"
+        ];
+
+        const chatbotAnswers = {
+            "What is MPMC?": "MPMC (Mabuting Pastol Multi-Purpose Cooperative) is a cooperative organization that provides various financial and social services to its members. Our vision is to create a strong community united by Christian faith, working together for comprehensive human development.",
+            "How can I become a member?": "To become a member:\n1. Contribute ₱2,000 Initial Share Capital\n2. Attend Pre-Membership Seminar\n3. Save at least ₱500\n4. Visit our MPMC office personally for more details",
+            "What services do you offer?": "We offer various services including:\n- Loans (Pangkabuhayan, Multi-Purpose, Housing, etc.)\n- Insurance (Life & Non-Life)\n- Health (HMO)\n- Appliances\n- Mark Cafe\nAnd many more financial services",
+            "What are the benefits of membership?": "Member benefits include:\n- Interest on capital\n- Interest on savings\n- Patronage refund\n- Rebate on regular loan\n- Insurance claims\n- Access to all our products and services",
+            "Where is your office located?": "Our office is located at:\nMPMC Bldg. Gate1 MRB Compound,\nNGCHP Pilot Area,\nBrgy Commonwealth,\nQuezon City",
+            "Test Question": "Test Answer"
+        };
+
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            if (chatbotContainer.style.display === 'flex') {
+                chatbotContainer.style.display = 'none';
+            } else {
+                chatbotContainer.style.display = 'flex';
+                initializeChatbot();
+            }
+        }
+
+        function initializeChatbot() {
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const questionsContainer = document.getElementById('chatbotQuestions');
+            
+            // Clear previous messages and questions
+            chatbotMessages.innerHTML = '';
+            questionsContainer.innerHTML = '';
+            
+            // Add welcome message
+            addBotMessage("Hello! I'm the MPMC assistant. How can I help you today?");
+            
+            // Add predefined questions
+            chatbotQuestions.forEach(question => {
+                const questionBtn = document.createElement('button');
+                questionBtn.className = 'question-btn';
+                questionBtn.textContent = question;
+                questionBtn.onclick = () => handleQuestionClick(question);
+                questionsContainer.appendChild(questionBtn);
+            });
+            
+            // Scroll questions to top initially
+            questionsContainer.scrollTop = 0;
+        }
+
+
+        function handleQuestionClick(question) {
+            addUserMessage(question);
+            showTypingIndicator();
+            
+            // Simulate typing delay
+            setTimeout(() => {
+                removeTypingIndicator();
+                addBotMessage(chatbotAnswers[question]);
+            }, 1500);
+        }
+
+        function addUserMessage(text) {
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message user-message';
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function addBotMessage(text) {
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot-message';
+            
+            // Preserve line breaks in the answer
+            messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+            
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Initialize chatbot when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // Add a small delay to allow the page to load completely
+            setTimeout(() => {
+                initializeChatbot();
+            }, 1000);
+        });
+
     </script>
 </body>
 </html>
