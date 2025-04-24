@@ -1,12 +1,16 @@
 body {
-    background-color: black;
+    background-color: #F6F5F2;
+}
+p, b {
+    color: black;
 }
 
 /* HEADER */
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/header.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../mpmc/img/bg.jpeg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     text-align: center;
     display: flex;
@@ -25,7 +29,7 @@ header h3 {
     margin: 50px;
 }
 .history img {
-    width: 300px;
+    width: 350px;
 }
 .history p {
     margin-right: 20px;
@@ -35,6 +39,7 @@ header h3 {
     font-weight: 500;
     text-align: center;
     margin-bottom: 40px;
+    color: black;
 }
 .history h2, .contact h2 {
     text-align: left;
@@ -47,7 +52,9 @@ header h3 {
 .events p, .activities p, .services li, .about p, .history p{
     text-align: justify;
 }
-
+.events p {
+    color: white;
+}
 .cards {
     display: flex;
     text-align: center;
@@ -72,6 +79,74 @@ header h3 {
 }
 .card p {
     text-align: center;
+}
+
+/* Image slider styles */
+.slider {
+    position: relative;
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Animation styles */
+.slide-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slide-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 /* ACTIVITIES */
@@ -109,9 +184,7 @@ header h3 {
     margin: 20px;
 }
 .chart img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 100%;
     object-fit: cover;
 }
 .chart .text {
@@ -140,6 +213,9 @@ header h3 {
     display: flex;
     gap: 300px;
 }
+.services ul li, .services ol li, .services h4 {
+    color: black;
+}
 
 /* ABOUT US */
 .about img {
@@ -156,6 +232,7 @@ header h3 {
 .vis-mis h3 {
     text-align: center;
     font-size: clamp(1.5rem, 2.5vw, 2rem);;
+    color: black;
 }
 .vis-mis p {
     text-align: justify;
@@ -202,6 +279,7 @@ form input, form textarea, form button {
     border: none;
     font-size: 16px;
     color: white;
+    background-color: #E6E6E6;
 }
 form textarea {
     height: 250px;
@@ -221,6 +299,9 @@ form button {
     animation: spin 0.6s linear infinite;
     margin-right: 5px;
 }
+form label {
+    color: black;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -229,6 +310,10 @@ form button {
 
 /* RESPONSIVE MOBILE PHONE*/
 @media (max-width: 600px) {
+    .history {
+        animation: none !important; /* Disable animation */
+    }
+
     header {
         height: 50vh;
     }
@@ -247,8 +332,12 @@ form button {
     }
     .history .text {
         margin-bottom: 20px;
-    }.history p {
+    }
+    .history p {
         margin-right: 0;
+    }
+    .history img {
+        display: none;
     }
 
     /* EVENTS */
@@ -291,7 +380,7 @@ form button {
     }
 
     /* ORG CHART */
-    .chart .people {
+    /* .chart .people {
         justify-content:space-evenly;
     }
     .chart img {
@@ -312,7 +401,7 @@ form button {
     }
     .chart .position p {
         font-size: 14px;
-    }
+    } */
 
     /* SERVICES */
     .services .ul {
@@ -467,7 +556,7 @@ form button {
 @media (min-width: 768px) and (max-width: 1024px) {
     /* HISTORY */
     .history {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
     }
     
@@ -477,7 +566,7 @@ form button {
     
     .history .img {
         width: 40%;
-        margin-top: 0;
+        margin-top: 10px;
     }
     
     .history img {
@@ -510,6 +599,10 @@ form button {
     .chart .person {
         width: 40%;
     }
+    .chart img {
+        width: 100%;
+        height: auto;
+    }
     .chart .fullname {
         font-size: 16px;
     }
@@ -534,7 +627,7 @@ form button {
 @keyframes appear {
     from {
         opacity: 0;
-        transform: translateX(-500px);
+        transform: translateX(-300px);
     }
     to {
         opacity: 1;

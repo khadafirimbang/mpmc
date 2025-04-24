@@ -6,9 +6,9 @@
     font-family: "Poppins", sans-serif;
 }
 nav {
-    background-color: #289906;
+    background-color: #487531;
     display: flex;
-    height: 70px;
+    height: 50px;
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -17,12 +17,12 @@ nav {
     z-index: 1;
 }
 nav img {
-    width: 30px;
+    width: 20px;
     margin-left: 20px;
 }
 nav .title h3 {
     color: white;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);;
 }
 nav .burger {
     cursor: pointer;
@@ -76,7 +76,6 @@ nav .burger {
 .overlay.active {
     display: block;
 }
-
 
 
 
