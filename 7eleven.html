@@ -160,7 +160,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("1GdV7rKtUmapTb4aY"); // Replace with your EmailJS Public Key
+            emailjs.init("mv0JLZDZl_BkxmO26"); // Replace with your EmailJS Public Key
         })();
 
         function sendMessage() {
@@ -185,7 +185,7 @@
                 message: message
             };
 
-            emailjs.send("service_q0rto4n", "template_l46rqqa", templateParams)
+            emailjs.send("service_swihsjb", "template_2da2i6e", templateParams)
                 .then(function(response) {
                     showResponse("Message sent successfully!", "green");
                     document.getElementById("contactForm").reset();

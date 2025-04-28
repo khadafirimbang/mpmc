@@ -189,7 +189,7 @@
             <input type="email" id="email" placeholder="Enter your email" required>
             <label for="message">Message</label>
             <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
-            <button type="submit" onclick="sendMessage()">Send</button>
+            <button type="submit" onclick="sendMessage(event)">Send</button>
             <p id="responseMessage" style="display: none; text-align: center; margin-top: 10px;"></p>
         </form>
     </div>
@@ -217,10 +217,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("1GdV7rKtUmapTb4aY"); // Replace with your EmailJS Public Key
+            emailjs.init("mv0JLZDZl_BkxmO26"); // Replace with your EmailJS Public Key
         })();
 
-        function sendMessage() {
+        function sendMessage(event) {
+            event.preventDefault(); // Prevent the form from submitting
             var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
             var message = document.getElementById("message").value;
@@ -242,7 +243,7 @@
                 message: message
             };
 
-            emailjs.send("service_q0rto4n", "template_l46rqqa", templateParams)
+            emailjs.send("service_swihsjb", "template_2da2i6e", templateParams)
                 .then(function(response) {
                     showResponse("Message sent successfully!", "green");
                     document.getElementById("contactForm").reset();
@@ -252,7 +253,7 @@
                 .finally(function() {
                     // Restore button after sending
                     sendButton.disabled = false;
-                    sendButton.innerHTML = "Send";
+                    sendButton.innerHTML = "Send"; // Reset button text
                 });
         }
 
