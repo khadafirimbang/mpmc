@@ -34,7 +34,7 @@ header h3 {
 .history p {
     margin-right: 20px;
 }
-.history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2 {
+.history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2, .dept h2 {
     font-size: 64px;
     font-weight: 500;
     text-align: center;
@@ -45,8 +45,32 @@ header h3 {
     text-align: left;
 }
 
+/* DEPARTMENTS */
+.dept ol {
+    list-style: decimal;
+    list-style-position: inside;
+}
+.dept ol li, .dept ul li {
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+.dept ol p,.dept ol ul p {
+    text-align: justify;
+}
+.dept ol ul {
+    list-style:disc;
+    list-style-position: inside;
+}
+.dept ol ul li, .dept ul li {
+    font-weight: 400;
+}
+.dept ol ul li b {
+    font-weight: 600;
+}
+
 /* EVENTS */
-.events, .chart, .activities, .services, .about {
+.events, .chart, .activities, .services, .about,  .dept{
     margin: 50px;
 }
 .events p, .activities p, .services li, .about p, .history p{
@@ -171,6 +195,9 @@ header h3 {
 }
 .activities #act2 img {
     margin-right: 0px;
+}
+.activities .act .txt  h3, .activities .act .txt p {
+    color: black;
 }
 
 /* ORG CHART */
@@ -320,7 +347,7 @@ form label {
         height: 50vh;
     }
 
-    .history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2 {
+    .history h2, .events h2, .activities h2, .chart h2, .services h2, .about h2, .contact h2, .dept h2 {
         font-size: clamp(2rem, 2.5vw, 4rem);
         font-weight: 500;
         text-align: center;
@@ -379,6 +406,9 @@ form label {
     .activities .act {
         display: flex;
         margin-bottom: 20px;
+    }
+    .activities .act .txt  h3, .activities .act .txt p {
+        color: white;
     }
 
     /* ORG CHART */
@@ -637,7 +667,7 @@ form label {
     }
 }
 
-.history, .events, .activities, .chart, .services, .about, .contact {
+.history, .events, .activities, .chart, .services, .about, .contact, .dept {
     animation: appear 5s linear;
     animation-timeline: view();
     animation-range: entry 0% cover 30%;
