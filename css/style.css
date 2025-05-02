@@ -410,6 +410,9 @@ form label {
     .activities .act .txt  h3, .activities .act .txt p {
         color: white;
     }
+    .activities .desc p, .activities .desc b {
+        color: white;
+    }
 
     /* ORG CHART */
     /* .chart .people {
