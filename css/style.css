@@ -89,6 +89,7 @@ header h3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../mpmc/img/card.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 300px;
     width: 400px;
     margin: 0px 8px 20px 8px;
@@ -103,6 +104,45 @@ header h3 {
 }
 .card p {
     text-align: center;
+}
+
+/* CMS */
+#kinder {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../cms/img/kinder.jpg');
+}
+#elem {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../cms/img/grade_school.webp');
+}
+#highschool {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../cms/img/high_school.avif');
+}
+
+
+#faith {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../cms/img/faith.jpg');
+}
+#concerned {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../cms/img/concerned.avif');
+}
+#co-creator {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../cms/img/co-creation.jpg');
+}
+
+/* 7 Eleven */
+#team {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../7eleven/img/team.jpg');
+}
+#integrity {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../7eleven/img/integrity.webp');
+}
+#reliability {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../7eleven/img/RELIABILITY.png');
+}
+#focus {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../7eleven/img/focus.jpg');
+}
+#data {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../7eleven/img/data.avif');
 }
 
 /* Image slider styles */
